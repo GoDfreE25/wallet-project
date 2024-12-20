@@ -1,9 +1,10 @@
+import { AuthorizeLayoutWrapper } from 'components/authorized-layout/authorized-layout';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>Start</h1>
+      <AuthorizeLayoutWrapper />
     </div>
   );
 }

@@ -1,0 +1,21 @@
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    'aside header'
+    'aside content';
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  position: relative;
+  .aside {
+    grid-area: aside;
+    transition: all 100ms ease-in-out;
+  }
+  .header {
+    grid-area: header;
+  }
+  .content {
+    grid-area: content;
+    max-width: 100vw;
+    min-height: calc(100vh - 65px);
+  }
+}
