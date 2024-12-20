@@ -15,12 +15,10 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "src/**.*",
-  ],
+  "include": ["**/*.ts", "**/*.tsx", "src/**.*", "global.d.ts"],
   "exclude": ["node_modules"]
 }
