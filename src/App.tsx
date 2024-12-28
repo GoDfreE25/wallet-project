@@ -1,11 +1,13 @@
 import { AuthorizeLayoutWrapper } from 'components/authorized-layout/authorized-layout';
 import './App.scss';
+import { ConfigProvider } from 'antd';
+import { themeConfig } from 'styles/theme';
 
 function App() {
   return (
-    <div className="App">
+    <ConfigProvider theme={themeConfig}>
       <AuthorizeLayoutWrapper />
-    </div>
+    </ConfigProvider>
   );
 }
 
