@@ -4,5 +4,4 @@ export const themeConfig: ThemeConfig = {
   token: {
     colorPrimary: '#1677FF',
   },
-  cssVar: true,
 };

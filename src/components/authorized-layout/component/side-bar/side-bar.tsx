@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
+import { BarChartOutlined, ProfileOutlined, WalletOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 import s from './sidebar-menu.module.scss';
@@ -17,18 +8,26 @@ import logo from '../../../../image/logo.svg';
 const { Sider } = Layout;
 
 const items: MenuProps['items'] = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
+  {
+    icon: BarChartOutlined,
+    name: 'Dashboard',
+  },
+  {
+    icon: WalletOutlined,
+    name: 'Wallet',
+  },
+  {
+    icon: ProfileOutlined,
+    name: 'User profile',
+  },
+  {
+    icon: SettingOutlined,
+    name: 'Setting',
+  },
+].map((item, index) => ({
   key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
+  icon: React.createElement(item.icon),
+  label: item.name,
 }));
 
 export const SidebarMenu = () => {
@@ -46,7 +45,7 @@ export const SidebarMenu = () => {
           </span>
         </div>
       </header>
-      <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} items={items} />
+      <Menu className={s.menu} theme="light" mode="inline" defaultSelectedKeys={['4']} items={items} />
     </Sider>
   );
 };
