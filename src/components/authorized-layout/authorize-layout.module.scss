@@ -11,12 +11,15 @@
     transition: all 100ms ease-in-out;
   }
   .header {
-    margin-left: 200px;
+    margin-left: 180px;
     grid-area: header;
+    &_collapsed {
+      margin-left: 75px;
+    }
   }
   .content {
     grid-area: content;
     max-width: 100vw;
-    min-height: calc(100vh - 65px);
+    min-height: calc(100vh - 140px);
   }
 }

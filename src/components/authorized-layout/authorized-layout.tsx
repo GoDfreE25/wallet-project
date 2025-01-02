@@ -1,15 +1,30 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect, useState } from 'react';
 import s from '../authorized-layout/authorize-layout.module.scss';
-import { SidebarMenu } from './component/side-bar/side-bar';
+import { Sidebar } from './component/sidebar/sidebar';
+import { WalletHeader } from './component/header/header';
 
 type Props = PropsWithChildren<{}>;
 
 export const AuthorizeLayoutWrapper = ({ children }: Props) => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    const savedState = JSON.parse(window.localStorage.getItem('isMenuOpen'));
+    if (savedState !== null) {
+      setIsCollapsed(savedState);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem('isMenuOpen', JSON.stringify(isCollapsed));
+  }, [isCollapsed]);
   return (
     <div className={s.wrapper}>
-      <header className={s.header}>Header</header>
+      <header className={isCollapsed ? s.header_collapsed : s.header}>
+        <WalletHeader isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
+      </header>
       <aside className={s.aside}>
-        <SidebarMenu />
+        <Sidebar isCollapsed={isCollapsed} />
       </aside>
       <div className={`${s.content}`}>{children}</div>
     </div>
