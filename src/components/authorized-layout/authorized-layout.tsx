@@ -26,7 +26,7 @@ export const AuthorizeLayoutWrapper = ({ children }: Props) => {
       <aside className={s.aside}>
         <Sidebar isCollapsed={isCollapsed} />
       </aside>
-      <div className={`${s.content}`}>{children}</div>
+      <div className={isCollapsed ? s.content_collapsed : s.content}>{children}</div>
     </div>
   );
 };

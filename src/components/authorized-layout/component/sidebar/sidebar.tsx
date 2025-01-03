@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BarChartOutlined, ProfileOutlined, WalletOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
@@ -11,26 +12,37 @@ const items: MenuProps['items'] = [
   {
     icon: BarChartOutlined,
     name: 'Dashboard',
+    key: '/dashboard',
   },
   {
     icon: WalletOutlined,
     name: 'Wallet',
+    key: '/wallet',
   },
   {
     icon: ProfileOutlined,
     name: 'User profile',
+    key: '/userProfile',
   },
   {
     icon: SettingOutlined,
     name: 'Setting',
+    key: '/setting',
   },
-].map((item, index) => ({
-  key: String(index + 1),
+].map((item) => ({
+  key: item.key,
   icon: React.createElement(item.icon),
   label: item.name,
 }));
 
 export const Sidebar = ({ isCollapsed }: { isCollapsed: boolean }) => {
+  const navigate = useNavigate();
+
+  const handleMenuClick = ({ key }) => {
+    if (key) {
+      navigate(key);
+    }
+  };
   return (
     <Sider className={s.sider} theme="light" collapsed={isCollapsed}>
       <header className={s.header}>
@@ -47,7 +59,14 @@ export const Sidebar = ({ isCollapsed }: { isCollapsed: boolean }) => {
           )}
         </div>
       </header>
-      <Menu className={s.menu} theme="light" mode="inline" defaultSelectedKeys={['4']} items={items} />
+      <Menu
+        className={s.menu}
+        theme="light"
+        mode="inline"
+        defaultSelectedKeys={['/dashboard']}
+        items={items}
+        onClick={handleMenuClick}
+      />
     </Sider>
   );
 };
