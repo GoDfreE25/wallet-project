@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card {
+  width: 250px;
+  height: 120px;
+  margin: 10px 0;
+  &_subtitle {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

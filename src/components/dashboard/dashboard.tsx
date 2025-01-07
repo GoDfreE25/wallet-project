@@ -1,3 +1,9 @@
+import { Statistic } from './components/statistic/statistic';
+
 export const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <Statistic />
+    </div>
+  );
 };
