@@ -20,7 +20,8 @@
   .content {
     grid-area: content;
     max-width: 100vw;
-    min-height: calc(100vh - 140px);
+    padding: 10px 20px;
+    min-height: calc(100vh - 160px);
     margin-left: 200px;
     &_collapsed {
       margin-left: 90px;
