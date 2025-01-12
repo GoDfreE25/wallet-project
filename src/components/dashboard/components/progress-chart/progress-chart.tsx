@@ -1,6 +1,7 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import s from '../progress-chart/progress-chart.module.scss';
 import { CustomTooltip } from './component/custom-tooltip/custom-tooltip';
+import { Select } from 'antd';
+import s from '../progress-chart/progress-chart.module.scss';
 
 const data = [
   {
@@ -54,8 +55,22 @@ const data = [
 ];
 
 export const ProgressChart = () => {
+  const handleChange = () => {};
   return (
     <div className={s.progress_chart}>
+      <div className={s.progress_chart_header}>
+        <h4>My progress</h4>{' '}
+        <Select
+          defaultValue="day"
+          style={{ width: 90 }}
+          onChange={handleChange}
+          options={[
+            { value: 'day', label: 'Day' },
+            { value: 'week', label: 'Week' },
+            { value: 'month', label: 'Month' },
+          ]}
+        />
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={500}
