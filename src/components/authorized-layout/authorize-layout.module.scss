@@ -8,7 +8,6 @@
   position: relative;
   .aside {
     grid-area: aside;
-    transition: all 100ms ease-in-out;
   }
   .header {
     margin-left: 180px;
@@ -24,7 +23,7 @@
     min-height: calc(100vh - 160px);
     margin-left: 200px;
     &_collapsed {
-      margin-left: 90px;
+      margin-left: 75px;
     }
   }
 }
