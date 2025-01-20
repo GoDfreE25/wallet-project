@@ -17,8 +17,7 @@ export const Statistic = () => {
           key={stat.id}
           bordered={false}
           title={
-            <div className={s.statistic_container}>
-              <h3>{stat.currency}</h3>
+            <div className={s.statistic_wrapper}>
               <StatisticAnt
                 className={s.statistic}
                 value={stat.value}
@@ -30,7 +29,10 @@ export const Statistic = () => {
             </div>
           }
         >
-          <p className={s.card_subtitle}>{stat.amount}</p>
+          <div className={s.statistic_container}>
+            <p className={s.card_subtitle}>{stat.amount}</p>
+            <h3 className={s.card_subtitle}>{stat.currency}</h3>
+          </div>
         </Card>
       ))}
     </div>

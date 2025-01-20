@@ -6,7 +6,7 @@ import { WalletHeader } from './component/header/header';
 type Props = PropsWithChildren<{}>;
 
 export const AuthorizeLayoutWrapper = ({ children }: Props) => {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   useEffect(() => {
     const savedState = JSON.parse(window.localStorage.getItem('isMenuOpen'));

@@ -47,7 +47,7 @@ export const LatestActivity = () => {
   ];
   return (
     <div className={s.wrapper}>
-      <h3>Latest Activity</h3>
+      <h3 className={s.title}>Latest Activity</h3>
       <Table<DataType>
         columns={columns}
         dataSource={activities}

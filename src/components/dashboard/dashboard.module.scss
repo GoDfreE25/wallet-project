@@ -3,11 +3,13 @@
   grid-template-areas:
     'statistic chart'
     'activity activity';
-  grid-template-rows: 50% 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-columns: auto 1fr;
   gap: 15px;
-  width: 100%;
+  width: calc(100% - 30px);
   height: 100%;
+  background-color: gray;
+  padding: 0 15px;
   .statistic {
     grid-area: statistic;
   }

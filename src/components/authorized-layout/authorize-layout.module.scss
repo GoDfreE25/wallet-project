@@ -1,4 +1,5 @@
 .wrapper {
+  background-color: gray;
   display: grid;
   grid-template-areas:
     'aside header'
@@ -20,9 +21,10 @@
     grid-area: content;
     max-width: 100vw;
     padding: 10px 20px;
-    min-height: calc(100vh - 160px);
+    height: calc(100vh - 114px);
     margin-left: 200px;
     &_collapsed {
+      height: calc(100vh - 94px);
       margin-left: 75px;
     }
   }

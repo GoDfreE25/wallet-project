@@ -59,7 +59,7 @@ export const ProgressChart = () => {
   return (
     <div className={s.progress_chart}>
       <div className={s.progress_chart_header}>
-        <h4>My progress</h4>{' '}
+        <h4 className={s.progress_chart_title}>My progress</h4>
         <Select
           defaultValue="day"
           style={{ width: 90 }}
