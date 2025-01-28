@@ -1,6 +1,22 @@
 .wallet {
+  display: grid;
+  grid-template-areas:
+    'currency_card'
+    'currency_converter';
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
   padding: 0 15px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+  .currency_card {
+    grid-area: currency_card;
+    display: flex;
+    width: inherit;
+    gap: 20px;
+  }
+  .currency_converter {
+    grid-area: currency_converter;
+  }
 }
