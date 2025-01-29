@@ -108,7 +108,12 @@ const CurrencyConverter: React.FC = () => {
           onAmountChange={handleFromAmountChange}
           onCurrencyChange={handleFromCurrencyChange}
         />
-        <Button type="primary" icon={<SwapOutlined />} shape="circle" onClick={handleCurrencySwap} />
+        <div className={s.button_container}>
+          <Button type="primary" icon={<SwapOutlined />} shape="circle" onClick={handleCurrencySwap} />
+          <Button type="primary" onClick={() => {}}>
+            Convert
+          </Button>
+        </div>
         <CurrencyInputWithSelect
           amount={toAmount}
           currency={toCurrency}
