@@ -1,6 +1,8 @@
 import React from 'react';
 import { Select, Input, Typography } from 'antd';
 import { FIATS } from 'components/wallet/components/consts/fiats';
+import Flag from 'react-flagkit';
+import { flags } from 'components/wallet/components/consts/flags';
 import s from '../currency-input-with-select/currency-input-with-select.module.scss';
 
 type CurrencyInputWithSelectProps = {
@@ -27,18 +29,21 @@ const CurrencyInputWithSelect: React.FC<CurrencyInputWithSelectProps> = ({
       style={{ width: '100%' }}
     >
       <Option value={FIATS.USD} className={s.item}>
-        <div className="option-content">
-          <Typography.Text style={{ marginLeft: 8 }}>US Dollar</Typography.Text>
+        <div className={s.option_content}>
+          <Flag country={flags[FIATS.USD]} size={40} />
+          <Typography.Text>US Dollar</Typography.Text>
         </div>
       </Option>
       <Option value={FIATS.EUR} className={s.item}>
-        <div className="option-content">
-          <Typography.Text style={{ marginLeft: 8 }}>Euro</Typography.Text>
+        <div className={s.option_content}>
+          <Flag country={flags[FIATS.EUR]} size={40} />
+          <Typography.Text>Euro</Typography.Text>
         </div>
       </Option>
       <Option value={FIATS.UKR} className={s.item}>
-        <div className="option-content">
-          <Typography.Text style={{ marginLeft: 8 }}>Ukraine Hryvnia</Typography.Text>
+        <div className={s.option_content}>
+          <Flag country={flags[FIATS.UKR]} size={40} />
+          <Typography.Text>Ukraine Hryvnia</Typography.Text>
         </div>
       </Option>
     </Select>

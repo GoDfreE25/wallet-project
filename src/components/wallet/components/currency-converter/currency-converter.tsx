@@ -93,7 +93,6 @@ const CurrencyConverter: React.FC = () => {
     <div className={s.main_container}>
       <Typography
         style={{
-          fontFamily: 'Effra, Helvetica, Arial, sans-serif',
           fontSize: '35px',
           fontWeight: 700,
           lineHeight: '48px',
